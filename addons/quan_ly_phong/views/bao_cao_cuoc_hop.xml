@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_bao_cao_cuoc_hop_form" model="ir.ui.view">
+            <field name="name">bao_cao_cuoc_hop.form</field>
+            <field name="model">bao_cao_cuoc_hop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="cuoc_hop_id"/>
+                            <field name="tom_tat"/>
+                            <field name="quyet_dinh"/>
+                            <field name="phan_hoi_nguoi_tham_du"/>
+                            <field name="tap_tin_dinh_kem"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_bao_cao_cuoc_hop_tree" model="ir.ui.view">
+            <field name="name">bao_cao_cuoc_hop.tree</field>
+            <field name="model">bao_cao_cuoc_hop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cuoc_hop_id"/>
+                    <field name="tom_tat"/>
+                    <field name="quyet_dinh"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_bao_cao_cuoc_hop_search" model="ir.ui.view">
+            <field name="name">bao_cao_cuoc_hop.search</field>
+            <field name="model">bao_cao_cuoc_hop</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cuoc_hop_id"/>
+                    <field name="tom_tat"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_bao_cao_cuoc_hop" model="ir.actions.act_window">
+            <field name="name">Báo Cáo Cuộc Họp</field>
+            <field name="res_model">bao_cao_cuoc_hop</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_bao_cao_cuoc_hop_search"/>
+        </record>
+
+        
+    </data>
+</odoo>

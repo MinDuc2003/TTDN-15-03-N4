@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_phong_hop_form" model="ir.ui.view">
+            <field name="name">phong_hop.form</field>
+            <field name="model">phong_hop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px; text-align:center; font-weight:bold; margin-bottom:10px;">Phòng Họp</div>
+                        <group>
+                            <group string="Thông tin chung">
+                                <field name="ten_phong"/>
+                                <field name="ma_phong"/>
+                                <field name="suc_chua"/>
+                                <field name="dia_diem_id"/>
+                            </group>
+                            <group string="Thiết bị Và Trạng thái">
+                                <field name="thiet_bi_ids" widget="many2many_tags"/>
+                                <field name="trang_thai"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Thông tin khác">
+                                <field name="mo_ta"/>
+                            </group>
+                            <group string="Hình ảnh">
+                                <field name="hinh_anh" widget="image" class="oe_avatar"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_phong_hop_tree" model="ir.ui.view">
+            <field name="name">phong_hop.tree</field>
+            <field name="model">phong_hop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_phong"/>
+                    <field name="ma_phong"/>
+                    <field name="suc_chua"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="phong_hop_search">
+            <field name="model">phong_hop</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ten_phong"/>
+                    <field name="ma_phong"/>
+                    <field name="trang_thai"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_phong_hop" model="ir.actions.act_window">
+            <field name="name">Phòng Họp</field>
+            <field name="res_model">phong_hop</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="phong_hop_search"/>
+        </record>
+    </data>
+</odoo>

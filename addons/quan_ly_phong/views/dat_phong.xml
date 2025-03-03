@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="view_dat_phong_form" model="ir.ui.view">
+            <field name="name">dat_phong.form</field>
+            <field name="model">dat_phong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Đặt Phòng</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="tieu_de"/>
+                            <field name="thoi_gian_bat_dau"/>
+                            <field name="thoi_gian_ket_thuc"/>
+                            <field name="muc_dich"/>
+                            <field name="trang_thai"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_dat_phong_tree" model="ir.ui.view">
+            <field name="name">dat_phong.tree</field>
+            <field name="model">dat_phong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tieu_de"/>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="thoi_gian_ket_thuc"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dat_phong_search">
+            <field name="model">dat_phong</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tieu_de"/>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="thoi_gian_ket_thuc"/>
+                    <field name="trang_thai"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_dat_phong" model="ir.actions.act_window">
+            <field name="name">Đặt Phòng</field>
+            <field name="res_model">dat_phong</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="dat_phong_search"/>
+        </record>
+    </data>
+</odoo>

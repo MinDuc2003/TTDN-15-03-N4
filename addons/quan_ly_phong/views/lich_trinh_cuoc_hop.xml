@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_lich_trinh_cuoc_hop_form" model="ir.ui.view">
+            <field name="name">lich_trinh_cuoc_hop.form</field>
+            <field name="model">lich_trinh_cuoc_hop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Lịch Trình Cuộc Họp</div>
+                        <group col="4" string="Thông tin lịch trình">
+                            <field name="cuoc_hop_id"/>
+                            <field name="chu_de"/>
+                            <field name="nguoi_thuyet_trinh_id"/>
+                            <field name="gio_bat_dau"/>
+                            <field name="gio_ket_thuc"/>
+                        </group>
+                        <group col="4" string="Ghi chú">
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_lich_trinh_cuoc_hop_tree" model="ir.ui.view">
+            <field name="name">lich_trinh_cuoc_hop.tree</field>
+            <field name="model">lich_trinh_cuoc_hop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cuoc_hop_id"/>
+                    <field name="chu_de"/>
+                    <field name="nguoi_thuyet_trinh_id"/>
+                    <field name="gio_bat_dau"/>
+                    <field name="gio_ket_thuc"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record model="ir.ui.view" id="lich_trinh_cuoc_hop_search">
+            <field name="model">lich_trinh_cuoc_hop</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cuoc_hop_id"/>
+                    <field name="chu_de"/>
+                    <field name="nguoi_thuyet_trinh_id"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_lich_trinh_cuoc_hop" model="ir.actions.act_window">
+            <field name="name">Lịch Trình Cuộc Họp</field>
+            <field name="res_model">lich_trinh_cuoc_hop</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="lich_trinh_cuoc_hop_search"/>
+        </record>
+    </data>
+</odoo>
