@@ -9,7 +9,6 @@
                 <form>
                     <sheet>
                         <group col="2">
-                            <field name="cuoc_hop_id"/>
                             <field name="tom_tat"/>
                             <field name="quyet_dinh"/>
                             <field name="phan_hoi_nguoi_tham_du"/>
@@ -26,7 +25,6 @@
             <field name="model">bao_cao_cuoc_hop</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="cuoc_hop_id"/>
                     <field name="tom_tat"/>
                     <field name="quyet_dinh"/>
                 </tree>
@@ -39,7 +37,6 @@
             <field name="model">bao_cao_cuoc_hop</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="cuoc_hop_id"/>
                     <field name="tom_tat"/>
                 </search>
             </field>

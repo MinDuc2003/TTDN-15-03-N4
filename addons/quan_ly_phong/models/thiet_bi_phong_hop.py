@@ -5,7 +5,7 @@ class ThietBiPhongHop(models.Model):
 
     ten_thiet_bi = fields.Char(string='Tên thiết bị', required=True)
     ma_thiet_bi = fields.Char(string='Mã thiết bị', required=True)
-    phong_id = fields.Many2one('phong.hop', string='Phòng họp')
+    #phong_id = fields.Many2one('phong_hop', string='Phòng họp')
     trang_thai = fields.Selection([
         ('available', 'Có sẵn'),
         ('in_use', 'Đang sử dụng'),

@@ -13,11 +13,7 @@
                                 <field name="ten_phong"/>
                                 <field name="ma_phong"/>
                                 <field name="suc_chua"/>
-                                <field name="dia_diem_id"/>
-                            </group>
-                            <group string="Thiết bị Và Trạng thái">
-                                <field name="thiet_bi_ids" widget="many2many_tags"/>
-                                <field name="trang_thai"/>
+                                <field name="dia_diem"/>
                             </group>
                         </group>
                         <group>

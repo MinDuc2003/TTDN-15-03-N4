@@ -9,6 +9,8 @@
                         <div class="oe_read_only" style="font-size:25px">Đặt Phòng</div>
                         <group col="4" string="Thông tin chung">
                             <field name="tieu_de"/>
+                            <field name="ten_nguoi_dat_phong"/>
+                            <field name="loai_phong"/>
                             <field name="thoi_gian_bat_dau"/>
                             <field name="thoi_gian_ket_thuc"/>
                             <field name="muc_dich"/>
@@ -26,6 +28,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="tieu_de"/>
+                    <field name="ten_nguoi_dat_phong"/>
+                    <field name="loai_phong"/>
                     <field name="thoi_gian_bat_dau"/>
                     <field name="thoi_gian_ket_thuc"/>
                     <field name="trang_thai"/>
@@ -38,6 +42,8 @@
             <field name="arch" type="xml">
                 <search>
                     <field name="tieu_de"/>
+                    <field name="ten_nguoi_dat_phong"/>
+                     <field name="loai_phong"/>
                     <field name="thoi_gian_bat_dau"/>
                     <field name="thoi_gian_ket_thuc"/>
                     <field name="trang_thai"/>

@@ -4,7 +4,7 @@ class ThongKePhongHop(models.Model):
     _description = 'Thống Kê Phòng Họp'
 
     tong_so_cuoc_hop = fields.Integer(string='Tổng số cuộc họp')
-    phong_id = fields.Many2one('phong.hop', string='Phòng họp')
+    #phong_id = fields.Many2one('phong_hop', string='Phòng họp')
     ty_le_su_dung = fields.Float(string='Tỷ lệ sử dụng (%)')
     so_nguoi_tham_du_tb = fields.Float(string='Số người tham dự trung bình')
     so_su_co_thiet_bi = fields.Integer(string='Số lần sự cố thiết bị')

@@ -12,7 +12,6 @@
                         <group col="4" string="Thông tin thiết bị">
                             <field name="ten_thiet_bi"/>
                             <field name="ma_thiet_bi"/>
-                            <field name="phong_id"/>
                             <field name="trang_thai"/>
                         </group>
                     </sheet>
@@ -28,7 +27,6 @@
                 <tree>
                     <field name="ten_thiet_bi"/>
                     <field name="ma_thiet_bi"/>
-                    <field name="phong_id"/>
                     <field name="trang_thai"/>
                 </tree>
             </field>
@@ -41,7 +39,6 @@
                 <search>
                     <field name="ten_thiet_bi"/>
                     <field name="ma_thiet_bi"/>
-                    <field name="phong_id"/>
                     <field name="trang_thai"/>
                 </search>
             </field>

@@ -10,9 +10,7 @@
                     <sheet>
                         <div class="oe_read_only" style="font-size:25px">Lịch Trình Cuộc Họp</div>
                         <group col="4" string="Thông tin lịch trình">
-                            <field name="cuoc_hop_id"/>
                             <field name="chu_de"/>
-                            <field name="nguoi_thuyet_trinh_id"/>
                             <field name="gio_bat_dau"/>
                             <field name="gio_ket_thuc"/>
                         </group>
@@ -30,9 +28,7 @@
             <field name="model">lich_trinh_cuoc_hop</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="cuoc_hop_id"/>
                     <field name="chu_de"/>
-                    <field name="nguoi_thuyet_trinh_id"/>
                     <field name="gio_bat_dau"/>
                     <field name="gio_ket_thuc"/>
                 </tree>
@@ -44,9 +40,7 @@
             <field name="model">lich_trinh_cuoc_hop</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="cuoc_hop_id"/>
                     <field name="chu_de"/>
-                    <field name="nguoi_thuyet_trinh_id"/>
                 </search>
             </field>
         </record>
