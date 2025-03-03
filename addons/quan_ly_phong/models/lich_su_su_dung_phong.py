@@ -1,7 +1,7 @@
 from odoo import models, fields, api
-class LichTrinhCuocHop(models.Model):
-    _name = 'lich_trinh_cuoc_hop'
-    _description = 'Lịch Trình Cuộc Họp'
+class LichSuSuDungPhong(models.Model):
+    _name = 'lich_su_su_dung_phong'
+    _description = 'Lịch Sử Sử Dụng Phòng '
 
     #cuoc_hop_id = fields.Many2one('dat_phong', string='Cuộc họp', required=True)
     chu_de = fields.Char(string='Chủ đề', required=True)

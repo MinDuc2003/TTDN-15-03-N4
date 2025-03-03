@@ -1,7 +1,7 @@
 from odoo import models, fields, api
-class DatPhong(models.Model):
-    _name = 'dat_phong'
-    _description = 'Đặt Phòng'
+class DonMuonPhong(models.Model):
+    _name = 'don_muon_phong'
+    _description = 'Đơn Mượn Phòng'
 
     tieu_de = fields.Char(string='Tiêu đề', required=True)
     ten_nguoi_dat_phong = fields.Char(string='Tên người đặt phòng', required=True)

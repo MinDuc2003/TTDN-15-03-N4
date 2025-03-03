@@ -11,12 +11,17 @@
             sequence="1"
             action="action_phong_hop"
         />
-
-        <menuitem name="Đặt Phòng" 
-            id="menu_dat_phong" 
+         <menuitem name="Phòng Hội Nghị" 
+            id="menu_phong_hoi_nghi" 
             parent="menu_root" 
             sequence="2"
-            action="action_dat_phong"
+            action="action_phong_hoi_nghi"
+        />
+        <menuitem name="Đơn Mượn Phòng" 
+            id="menu_don_muon_phong" 
+            parent="menu_root" 
+            sequence="3"
+            action="action_don_muon_phong"
         />
           
           <menuitem name="Thống Kê Phòng Họp" 
@@ -26,23 +31,18 @@
             action="action_thong_ke_phong_hop"
         />
        
-         <menuitem name="Lịch Trình Phòng Họp" 
-            id="menu_lich_trinh_cuoc_hop" 
+         <menuitem name="Lịch Sử Sử Dụng Phòng" 
+            id="menu_lich_su_su_dung_phong" 
             parent="menu_root" 
-            sequence="3"
-            action="action_lich_trinh_cuoc_hop"
+            sequence="4"
+            action="action_lich_su_su_dung_phong"
         />
         <menuitem name="Thiết Bị Phòng Họp" 
             id="menu_thiet_bi_phong_hop" 
             parent="menu_root" 
-            sequence="4"
+            sequence="5"
             action="action_thiet_bi_phong_hop"
         />
-        <menuitem name="Báo Cáo Cuộc Họp" 
-            id="menu_bao_cao_cuoc_hop" 
-            parent="menu_root" 
-            sequence="5"
-            action="action_bao_cao_cuoc_hop"
-        />
+        
     </data>
 </odoo>

@@ -1,12 +1,12 @@
 <odoo>
     <data>
-        <record id="view_dat_phong_form" model="ir.ui.view">
-            <field name="name">dat_phong.form</field>
-            <field name="model">dat_phong</field>
+        <record id="view_don_muon_phong_form" model="ir.ui.view">
+            <field name="name">don_muon_phong</field>
+            <field name="model">don_muon_phong</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Đặt Phòng</div>
+                        <div class="oe_read_only" style="font-size:25px">Đơn Mượn Phòng</div>
                         <group col="4" string="Thông tin chung">
                             <field name="tieu_de"/>
                             <field name="ten_nguoi_dat_phong"/>
@@ -22,9 +22,9 @@
             </field>
         </record>
 
-        <record id="view_dat_phong_tree" model="ir.ui.view">
-            <field name="name">dat_phong.tree</field>
-            <field name="model">dat_phong</field>
+        <record id="view_don_muon_phong_tree" model="ir.ui.view">
+            <field name="name">don_muon_phong.tree</field>
+            <field name="model">don_muon_phong</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="tieu_de"/>
@@ -37,8 +37,8 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="dat_phong_search">
-            <field name="model">dat_phong</field>
+        <record model="ir.ui.view" id="don_muon_phong_search">
+            <field name="model">don_muon_phong</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="tieu_de"/>
@@ -51,11 +51,11 @@
             </field>
         </record>
 
-        <record id="action_dat_phong" model="ir.actions.act_window">
-            <field name="name">Đặt Phòng</field>
-            <field name="res_model">dat_phong</field>
+        <record id="action_don_muon_phong" model="ir.actions.act_window">
+            <field name="name">Đơn Mượn Phòng</field>
+            <field name="res_model">don_muon_phong</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="dat_phong_search"/>
+            <field name="search_view_id" ref="don_muon_phong_search"/>
         </record>
     </data>
 </odoo>

@@ -26,9 +26,9 @@
     'data': [
         'security/ir.model.access.csv',
         'views/phong_hop.xml',
-        'views/bao_cao_cuoc_hop.xml',
-        'views/dat_phong.xml',
-        'views/lich_trinh_cuoc_hop.xml',
+         'views/phong_hoi_nghi.xml',
+        'views/don_muon_phong.xml',
+        'views/lich_su_su_dung_phong.xml',
         'views/thiet_bi_phong_hop.xml',
         'views/thong_ke_phong_hop.xml',
         'views/menu.xml',

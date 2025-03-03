@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_phong_hoi_nghi_form" model="ir.ui.view">
+            <field name="name">phong_hoi_nghi</field>
+            <field name="model">phong_hoi_nghi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px; text-align:center; font-weight:bold; margin-bottom:10px;">Phòng Họp</div>
+                        <group>
+                            <group string="Thông tin chung">
+                                <field name="ten_phong"/>
+                                <field name="ma_phong"/>
+                                <field name="suc_chua"/>
+                                <field name="dia_diem"/>
+                                <field name="trang_thai"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Thông tin khác">
+                                <field name="mo_ta"/>
+                            </group>
+                            <group string="Hình ảnh">
+                                <field name="hinh_anh" widget="image" class="oe_avatar"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_phong_hoi_nghi_tree" model="ir.ui.view">
+            <field name="name">phong_hoi_nghi</field>
+            <field name="model">phong_hoi_nghi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_phong"/>
+                    <field name="ma_phong"/>
+                    <field name="suc_chua"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="phong_hoi_nghi_search">
+            <field name="model">phong_hoi_nghi</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ten_phong"/>
+                    <field name="ma_phong"/>
+                    <field name="trang_thai"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_phong_hoi_nghi" model="ir.actions.act_window">
+            <field name="name">Phòng Hội Nghị</field>
+            <field name="res_model">phong_hoi_nghi</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="phong_hoi_nghi_search"/>
+        </record>
+    </data>
+</odoo>

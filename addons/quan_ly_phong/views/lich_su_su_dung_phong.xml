@@ -2,14 +2,14 @@
 <odoo>
     <data>
         <!-- Form View -->
-        <record id="view_lich_trinh_cuoc_hop_form" model="ir.ui.view">
-            <field name="name">lich_trinh_cuoc_hop.form</field>
-            <field name="model">lich_trinh_cuoc_hop</field>
+        <record id="view_lich_su_su_dung_phong_form" model="ir.ui.view">
+            <field name="name">lich_su_su_dung_phong.form</field>
+            <field name="model">lich_su_su_dung_phong</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Lịch Trình Cuộc Họp</div>
-                        <group col="4" string="Thông tin lịch trình">
+                        <div class="oe_read_only" style="font-size:25px">Lịch Sử Sử Dụng Phòng </div>
+                        <group col="4" string="Thông tin lịch sử">
                             <field name="chu_de"/>
                             <field name="gio_bat_dau"/>
                             <field name="gio_ket_thuc"/>
@@ -23,9 +23,9 @@
         </record>
 
         <!-- Tree View -->
-        <record id="view_lich_trinh_cuoc_hop_tree" model="ir.ui.view">
-            <field name="name">lich_trinh_cuoc_hop.tree</field>
-            <field name="model">lich_trinh_cuoc_hop</field>
+        <record id="view_lich_su_su_dung_phong_hop_tree" model="ir.ui.view">
+            <field name="name">lich_su_su_dung_phong.tree</field>
+            <field name="model">lich_su_su_dung_phong</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="chu_de"/>
@@ -36,8 +36,8 @@
         </record>
 
         <!-- Search View -->
-        <record model="ir.ui.view" id="lich_trinh_cuoc_hop_search">
-            <field name="model">lich_trinh_cuoc_hop</field>
+        <record model="ir.ui.view" id="lich_su_su_dung_phong_search">
+            <field name="model">lich_su_su_dung_phong</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="chu_de"/>
@@ -46,11 +46,11 @@
         </record>
 
         <!-- Action -->
-        <record id="action_lich_trinh_cuoc_hop" model="ir.actions.act_window">
-            <field name="name">Lịch Trình Cuộc Họp</field>
-            <field name="res_model">lich_trinh_cuoc_hop</field>
+        <record id="action_lich_su_su_dung_phong" model="ir.actions.act_window">
+            <field name="name">Lịch Sử Sử Dụng Phòng </field>
+            <field name="res_model">lich_su_su_dung_phong</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="lich_trinh_cuoc_hop_search"/>
+            <field name="search_view_id" ref="lich_su_su_dung_phong_search"/>
         </record>
     </data>
 </odoo>
