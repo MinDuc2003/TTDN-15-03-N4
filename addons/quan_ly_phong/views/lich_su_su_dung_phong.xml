@@ -1,6 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- Kanban View -->
+        <record id="view_lich_su_su_dung_phong_kanban" model="ir.ui.view">
+            <field name="name">lich_su_su_dung_phong.kanban</field>
+            <field name="model">lich_su_su_dung_phong</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_view">
+                    <field name="phong_hop_id"/>
+                    <field name="phong_hoi_nghi_id"/>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="thoi_gian_ket_thuc"/>
+                    <field name="trang_thai_su_dung"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <strong>
+                                    <t t-if="record.phong_hop_id.value">
+                                        🔹 Phòng họp: <t t-esc="record.phong_hop_id.value"/>
+                                    </t>
+                                    <t t-if="record.phong_hoi_nghi_id.value">
+                                         Phòng hội nghị: <t t-esc="record.phong_hoi_nghi_id.value"/>
+                                    </t>
+                                </strong>
+                                <div>
+                                     <t t-esc="record.thoi_gian_bat_dau.value"/> - <t t-esc="record.thoi_gian_ket_thuc.value"/>
+                                </div>
+                                <div>
+                                    <t t-if="record.trang_thai_su_dung.value == 'da_dat'">
+                                        <span class="badge badge-warning">Đã Đặt</span>
+                                    </t>
+                                    <t t-if="record.trang_thai_su_dung.value == 'dang_su_dung'">
+                                        <span class="badge badge-danger">Đang Sử Dụng</span>
+                                    </t>
+                                    <t t-if="record.trang_thai_su_dung.value == 'trong'">
+                                        <span class="badge badge-success">Trống</span>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Calendar View -->
+        <record id="view_lich_su_su_dung_phong_calendar" model="ir.ui.view">
+            <field name="name">lich_su_su_dung_phong.calendar</field>
+            <field name="model">lich_su_su_dung_phong</field>
+            <field name="arch" type="xml">
+                <calendar date_start="thoi_gian_bat_dau" date_stop="thoi_gian_ket_thuc" color="trang_thai_su_dung">
+                    <field name="phong_hop_id"/>
+                    <field name="phong_hoi_nghi_id"/>
+                    <field name="trang_thai_su_dung"/>
+                </calendar>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_lich_su_su_dung_phong_tree" model="ir.ui.view">
+            <field name="name">lich_su_su_dung_phong.tree</field>
+            <field name="model">lich_su_su_dung_phong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="phong_hop_id"/>
+                    <field name="phong_hoi_nghi_id"/>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="thoi_gian_ket_thuc"/>
+                    <field name="trang_thai_su_dung"/>
+                </tree>
+            </field>
+        </record>
+
         <!-- Form View -->
         <record id="view_lich_su_su_dung_phong_form" model="ir.ui.view">
             <field name="name">lich_su_su_dung_phong.form</field>
@@ -8,49 +78,29 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Lịch Sử Sử Dụng Phòng </div>
-                        <group col="4" string="Thông tin lịch sử">
-                            <field name="chu_de"/>
-                            <field name="gio_bat_dau"/>
-                            <field name="gio_ket_thuc"/>
-                        </group>
-                        <group col="4" string="Ghi chú">
-                            <field name="ghi_chu"/>
+                        <group>
+                            <group>
+                                <field name="don_muon_phong_id"/>
+                                <field name="phong_hop_id"/>
+                                <field name="phong_hoi_nghi_id"/>
+                            </group>
+                            <group>
+                                <field name="thoi_gian_bat_dau"/>
+                                <field name="thoi_gian_ket_thuc"/>
+                                <field name="trang_thai_su_dung"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
-        <!-- Tree View -->
-        <record id="view_lich_su_su_dung_phong_hop_tree" model="ir.ui.view">
-            <field name="name">lich_su_su_dung_phong.tree</field>
-            <field name="model">lich_su_su_dung_phong</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="chu_de"/>
-                    <field name="gio_bat_dau"/>
-                    <field name="gio_ket_thuc"/>
-                </tree>
-            </field>
-        </record>
-
-        <!-- Search View -->
-        <record model="ir.ui.view" id="lich_su_su_dung_phong_search">
-            <field name="model">lich_su_su_dung_phong</field>
-            <field name="arch" type="xml">
-                <search>
-                    <field name="chu_de"/>
-                </search>
-            </field>
-        </record>
-
         <!-- Action -->
         <record id="action_lich_su_su_dung_phong" model="ir.actions.act_window">
-            <field name="name">Lịch Sử Sử Dụng Phòng </field>
+            <field name="name">Lịch Sử Sử Dụng Phòng</field>
             <field name="res_model">lich_su_su_dung_phong</field>
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="lich_su_su_dung_phong_search"/>
+            <field name="view_mode">calendar,kanban,tree,form</field>
         </record>
+
     </data>
 </odoo>

@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <!-- Form View cho Thống Kê -->
+        <record id="view_thong_ke_form" model="ir.ui.view">
+            <field name="name">thong_ke.form</field>
+            <field name="model">thong_ke</field>
+            <field name="arch" type="xml">
+                <form string="Thống Kê Phòng Họp">
+                    <sheet>
+                        <h2 class="oe_read_only" style="font-size:22px; color:#003366; margin-bottom:10px;">
+                            📊 Báo Cáo Thống Kê Phòng Họp
+                        </h2>
+                        <group col="2">
+                            <group>
+                                <field name="ngay_thong_ke"/>
+                                <field name="tong_so_cuoc_hop" widget="statinfo"/>
+                                <field name="so_cuoc_hop_huy" widget="statinfo"/>
+                            </group>
+                            <group>
+                                <field name="ty_le_su_dung" widget="progressbar"/>
+                                <field name="thoi_luong_tb"/>
+                            </group>
+                        </group>
+                        <group string="Lịch Sử Sử Dụng Phòng">
+                            <field name="lich_su_su_dung_ids" widget="one2many_list">
+                                <tree>
+                                    <field name="don_muon_phong_id" string="Đơn Mượn Phòng"/>
+                                    <field name="phong_hop_id" string="Phòng Họp"/>
+                                    <field name="thoi_gian_bat_dau" string="Thời Gian Bắt Đầu"/>
+                                    <field name="thoi_gian_ket_thuc" string="Thời Gian Kết Thúc"/>
+                                    <field name="trang_thai_su_dung" string="Trạng Thái"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group string="Biểu Đồ Thống Kê">
+                            <field name="du_lieu_bieu_do" widget="image" class="oe_avatar"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View cho Thống Kê -->
+        <record id="view_thong_ke_tree" model="ir.ui.view">
+            <field name="name">thong_ke.tree</field>
+            <field name="model">thong_ke</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ngay_thong_ke"/>
+                    <field name="tong_so_cuoc_hop"/>
+                    <field name="ty_le_su_dung"/>
+                    <field name="so_cuoc_hop_huy"/>
+                    <field name="thoi_luong_tb"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Tree View cho Lịch Sử Sử Dụng Phòng -->
+        <record id="view_lich_su_su_dung_tree" model="ir.ui.view">
+            <field name="name">lich_su_su_dung.tree</field>
+            <field name="model">lich_su_su_dung_phong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="don_muon_phong_id" string="Đơn Mượn Phòng"/>
+                    <field name="phong_hop_id" string="Phòng Họp"/>
+                    <field name="thoi_gian_bat_dau" string="Thời Gian Bắt Đầu"/>
+                    <field name="thoi_gian_ket_thuc" string="Thời Gian Kết Thúc"/>
+                    <field name="trang_thai_su_dung" string="Trạng Thái"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action cho Thống Kê -->
+        <record id="action_thong_ke" model="ir.actions.act_window">
+            <field name="name">Thống Kê Phòng Họp</field>
+            <field name="res_model">thong_ke</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_thong_ke_tree"/>
+        </record>
+
+        <!-- Action cho Lịch Sử Sử Dụng Phòng -->
+        <record id="action_lich_su_su_dung" model="ir.actions.act_window">
+            <field name="name">Lịch Sử Sử Dụng Phòng</field>
+            <field name="res_model">lich_su_su_dung_phong</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_lich_su_su_dung_tree"/>
+        </record>
+
+    </data>
+</odoo>

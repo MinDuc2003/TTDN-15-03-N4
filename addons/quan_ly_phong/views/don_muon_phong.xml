@@ -1,7 +1,8 @@
 <odoo>
     <data>
+        <!-- Form View -->
         <record id="view_don_muon_phong_form" model="ir.ui.view">
-            <field name="name">don_muon_phong</field>
+            <field name="name">don_muon_phong.form</field>
             <field name="model">don_muon_phong</field>
             <field name="arch" type="xml">
                 <form>
@@ -17,11 +18,35 @@
                             <field name="trang_thai"/>
                             <field name="ghi_chu"/>
                         </group>
+
+                        <!-- Chọn phòng họp - Chỉ hiển thị nếu là phòng họp -->
+                        <group col="4" string="Thông tin Phòng Họp" attrs="{'invisible': [('loai_phong', '!=', 'phong_hop')]}">
+                            <field name="phong_hop_id"/>
+                            <field name="ten_phong_hop" attrs="{'invisible': [('phong_hop_id', '=', False)]}"/>
+                            <field name="suc_chua_phong_hop" attrs="{'invisible': [('phong_hop_id', '=', False)]}"/>
+                            <field name="dia_diem_phong_hop" attrs="{'invisible': [('phong_hop_id', '=', False)]}"/>
+                            <field name="trang_thai_phong_hop" attrs="{'invisible': [('phong_hop_id', '=', False)]}"/>
+                            <field name="mo_ta_phong_hop" attrs="{'invisible': [('phong_hop_id', '=', False)]}"/>
+                            <field name="hinh_anh_phong_hop" widget="image" attrs="{'invisible': [('phong_hop_id', '=', False)]}"/>
+                        </group>
+
+                        <!-- Chọn phòng hội nghị - Chỉ hiển thị nếu là phòng hội nghị -->
+                        <group col="4" string="Thông tin Phòng Hội Nghị" attrs="{'invisible': [('loai_phong', '!=', 'phong_hoi_nghi')]}">
+                            <field name="phong_hoi_nghi_id"/>
+                            <field name="ten_phong" attrs="{'invisible': [('phong_hoi_nghi_id', '=', False)]}"/>
+                            <field name="suc_chua" attrs="{'invisible': [('phong_hoi_nghi_id', '=', False)]}"/>
+                            <field name="dia_diem" attrs="{'invisible': [('phong_hoi_nghi_id', '=', False)]}"/>
+                            <field name="trang_thai" attrs="{'invisible': [('phong_hoi_nghi_id', '=', False)]}"/>
+                            <field name="mo_ta" attrs="{'invisible': [('phong_hoi_nghi_id', '=', False)]}"/>
+                            <field name="hinh_anh" widget="image" attrs="{'invisible': [('phong_hoi_nghi_id', '=', False)]}"/>
+                        </group>
+
                     </sheet>
                 </form>
             </field>
         </record>
 
+        <!-- Tree View -->
         <record id="view_don_muon_phong_tree" model="ir.ui.view">
             <field name="name">don_muon_phong.tree</field>
             <field name="model">don_muon_phong</field>
@@ -33,24 +58,29 @@
                     <field name="thoi_gian_bat_dau"/>
                     <field name="thoi_gian_ket_thuc"/>
                     <field name="trang_thai"/>
+                    <field name="phong_hop_id"/>
+                    <field name="phong_hoi_nghi_id"/>
                 </tree>
             </field>
         </record>
 
+        <!-- Search View -->
         <record model="ir.ui.view" id="don_muon_phong_search">
             <field name="model">don_muon_phong</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="tieu_de"/>
                     <field name="ten_nguoi_dat_phong"/>
-                     <field name="loai_phong"/>
+                    <field name="loai_phong"/>
                     <field name="thoi_gian_bat_dau"/>
                     <field name="thoi_gian_ket_thuc"/>
                     <field name="trang_thai"/>
+                    <field name="phong_hop_id"/>
                 </search>
             </field>
         </record>
 
+        <!-- Action -->
         <record id="action_don_muon_phong" model="ir.actions.act_window">
             <field name="name">Đơn Mượn Phòng</field>
             <field name="res_model">don_muon_phong</field>

@@ -29,8 +29,7 @@
          'views/phong_hoi_nghi.xml',
         'views/don_muon_phong.xml',
         'views/lich_su_su_dung_phong.xml',
-        'views/thiet_bi_phong_hop.xml',
-        'views/thong_ke_phong_hop.xml',
+        'views/thong_ke.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

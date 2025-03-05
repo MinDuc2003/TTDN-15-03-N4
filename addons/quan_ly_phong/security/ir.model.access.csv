@@ -4,11 +4,11 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
 access_phong_hop,phong_hop,model_phong_hop,base.group_user,1,1,1,1
 
-access_thiet_bi_phong_hop,thiet_bi_phong_hop,model_thiet_bi_phong_hop,base.group_user,1,1,1,1
+
 
 access_phong_hoi_nghi,phong_hoi_nghi,model_phong_hoi_nghi,base.group_user,1,1,1,1
 
-access_thong_ke_phong_hop,thong_ke_phong_hop,model_thong_ke_phong_hop,base.group_user,1,1,1,1
+access_thong_ke,thong_ke,model_thong_ke,base.group_user,1,1,1,1
 
 access_don_muon_phong,don_muon_phong.don_muon_phong,model_don_muon_phong,base.group_user,1,1,1,1
 
