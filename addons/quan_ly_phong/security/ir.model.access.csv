@@ -14,3 +14,4 @@ access_don_muon_phong,don_muon_phong.don_muon_phong,model_don_muon_phong,base.gr
 
 
 access_lich_su_su_dung_phong,lich_su_su_dung_phong,model_lich_su_su_dung_phong,base.group_user,1,1,1,1
+access_tien_ich,tien_ich,model_tien_ich,base.group_user,1,1,1,1

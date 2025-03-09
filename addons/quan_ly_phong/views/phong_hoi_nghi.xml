@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- Form View -->
         <record id="view_phong_hoi_nghi_form" model="ir.ui.view">
-            <field name="name">phong_hoi_nghi</field>
+            <field name="name">phong_hoi_nghi.form</field>
             <field name="model">phong_hoi_nghi</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px; text-align:center; font-weight:bold; margin-bottom:10px;">Phòng Họp</div>
+                        <div class="oe_read_only" style="font-size:25px; text-align:center; font-weight:bold; margin-bottom:10px;">
+                            Phòng Hội Nghị
+                        </div>
                         <group>
                             <group string="Thông tin chung">
                                 <field name="ten_phong"/>
@@ -25,24 +28,52 @@
                                 <field name="hinh_anh" widget="image" class="oe_avatar"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Thiết bị trong phòng">
+                                <field name="thiet_bi_ids">
+                                    <tree create="false" edit="false" delete="false">
+                                        <field name="name"/>
+                                        <field name="serial_number"/>
+                                        <field name="loai_thiet_bi"/>
+                                        <field name="trang_thai"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" readonly="1"/>
+                                                <field name="serial_number" readonly="1"/>
+                                                <field name="loai_thiet_bi" readonly="1"/>
+                                                <field name="trang_thai" readonly="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="image" widget="image" readonly="1"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
 
+        <!-- Tree View -->
         <record id="view_phong_hoi_nghi_tree" model="ir.ui.view">
-            <field name="name">phong_hoi_nghi</field>
+            <field name="name">phong_hoi_nghi.tree</field>
             <field name="model">phong_hoi_nghi</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="ten_phong"/>
                     <field name="ma_phong"/>
                     <field name="suc_chua"/>
+                    <field name="dia_diem"/>
                     <field name="trang_thai"/>
                 </tree>
             </field>
         </record>
 
+        <!-- Search View -->
         <record model="ir.ui.view" id="phong_hoi_nghi_search">
             <field name="model">phong_hoi_nghi</field>
             <field name="arch" type="xml">
@@ -54,6 +85,7 @@
             </field>
         </record>
 
+        <!-- Action -->
         <record id="action_phong_hoi_nghi" model="ir.actions.act_window">
             <field name="name">Phòng Hội Nghị</field>
             <field name="res_model">phong_hoi_nghi</field>

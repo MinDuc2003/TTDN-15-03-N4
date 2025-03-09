@@ -30,6 +30,7 @@
         'views/don_muon_phong.xml',
         'views/lich_su_su_dung_phong.xml',
         'views/thong_ke.xml',
+         'views/tien_ich.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

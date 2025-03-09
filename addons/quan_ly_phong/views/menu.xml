@@ -27,8 +27,14 @@
           <menuitem name="Thống Kê " 
             id="menu_thong_ke" 
             parent="menu_root" 
-            sequence="5"
+            sequence="6"
             action="action_thong_ke"
+        />
+        <menuitem name="Tiện ích " 
+            id="menu_tien_ich" 
+            parent="menu_root" 
+            sequence="5"
+            action="action_tien_ich"
         />
        
          <menuitem name="Lịch Sử Sử Dụng Phòng" 

@@ -19,3 +19,5 @@ class PhongHoiNghi(models.Model):
      # Quan hệ One2many với Đơn Mượn Phòng
     don_muon_phong_ids = fields.One2many('don_muon_phong', 'phong_hoi_nghi_id', string='Danh sách đơn mượn')
     lich_su_su_dung_ids = fields.One2many('lich_su_su_dung_phong', 'phong_hoi_nghi_id', string='Lịch Sử Sử Dụng')
+    # Quan hệ One2many với Thiết bị
+    thiet_bi_ids = fields.One2many('tien_ich', 'phong_hoi_nghi_id', string="Thiết bị trong phòng")
